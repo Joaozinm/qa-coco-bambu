@@ -18,6 +18,8 @@
   "homepage": "https://github.com/Joaozinm/qa-coco-bambu#readme",
   "devDependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^22.0.1",
-    "cypress": "^14.4.0"
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.5",
+    "cypress": "^14.4.0",
+    "esbuild": "^0.25.5"
   }
 }
