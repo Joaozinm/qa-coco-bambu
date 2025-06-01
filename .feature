@@ -28,3 +28,5 @@ Feature: Fluxos críticos da jornada de compra no sistema de delivery
     When eu clico em "Remover"
     Then o item deve desaparecer do carrinho
     And o valor total deve ser atualizado corretamente
+
+    
