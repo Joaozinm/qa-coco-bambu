@@ -1,0 +1,22 @@
+{
+  "name": "desafio-tecnico-cblab",
+  "version": "1.0.0",
+  "description": "Main tests for Coco Bambu delivery platform.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Joaozinm/qa-coco-bambu.git"
+  },
+  "author": "Joao Melo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Joaozinm/qa-coco-bambu/issues"
+  },
+  "homepage": "https://github.com/Joaozinm/qa-coco-bambu#readme",
+  "devDependencies": {
+    "cypress": "^14.4.0"
+  }
+}
