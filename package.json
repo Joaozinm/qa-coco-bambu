@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Main tests for Coco Bambu delivery platform.",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,6 +20,7 @@
   "devDependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^22.0.1",
     "@bahmutov/cypress-esbuild-preprocessor": "^2.2.5",
+    "@cypress/xpath": "^2.0.3",
     "cypress": "^14.4.0",
     "esbuild": "^0.25.5"
   }
