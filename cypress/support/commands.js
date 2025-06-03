@@ -1,25 +1,28 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+import userData from "../fixtures/userData.json";
+
+Cypress.Commands.add("fastLogin", () => {
+  cy.session(
+    "user_session",
+    () => {
+      cy.visit("/entrar");
+      cy.get("#ion-input-2").type(userData.userSuccess.username);
+      cy.get("#ion-input-3").type(userData.userSuccess.password);
+      cy.get("button").first().click();
+
+      // 2FA
+      for (let i = 0; i < 6; i++) {
+        cy.get(`[id^="otp_${i}_"]`).type("A");
+      }
+      cy.get("button").first().click();
+
+      // Verificação
+      cy.url().should("include", "/home");
+      cy.get(".user-avatar").should("be.visible");
+    },
+    {
+      validate() {
+        cy.getCookie("session_token").should("exist");
+      },
+    }
+  );
+});

@@ -1,4 +1,4 @@
-class ProductsPage {
+class MenuPage {
   selectorsList() {
     const selectors = {
       menuGrid: "delivery-menu",
@@ -26,11 +26,10 @@ class ProductsPage {
   }
 
   validateProductsVisibility() {
-    // Primeiro verifica se existe pelo menos 1 produto
     cy.get(this.selectorsList().products, { timeout: 15000 })
       .should("exist")
       .and("have.length.greaterThan", 0);
   }
 }
 
-export default new ProductsPage();
+export default new MenuPage();

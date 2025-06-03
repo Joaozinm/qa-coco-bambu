@@ -3,6 +3,7 @@ class HomePage {
     const selectors = {
       typeRegionField: "[placeholder='Informe seu endereço']",
       regionRestaurant: "[_nghost-ng-c3020357099='']",
+      loginButton: ".login-text",
     };
     return selectors;
   }
@@ -15,6 +16,12 @@ class HomePage {
     cy.get(this.selectorsList().typeRegionField, { timeout: 10000 })
       .should("exist")
       .and("be.visible");
+  }
+
+  verifyUserLogged() {
+    cy.get(this.selectorsList().loginButton, { timeout: 5000 })
+      .should("exist")
+      .and("not.be.visible");
   }
 
   fillRegion(region) {
