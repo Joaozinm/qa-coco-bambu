@@ -130,12 +130,16 @@ Funcionalidade: Remoção de item do carrinho
 ### ✔️ Fluxos automatizados:
 
 - Login (via sessão) - `login.cy.js`
+- 
   ![Evidência do teste](cypress/support/media/login.png)
 - Selecionar restaurante e ver produtos - `accessMenu.cy.js`
+- 
   ![Evidência do teste](cypress/support/media/accessMenu.png)
 - Adicionar item ao carrinho - `addItemToCart.cy.js`
+- 
   ![Evidência do teste](cypress/support/media/addItemToCart.png)
 - Cadastro de novo endereço - `adressRegister.cy.js`
+- 
   ![Evidência do teste](cypress/support/media/adressRegister.png)
 
 ### 🧱 Arquitetura utilizada:
