@@ -21,8 +21,8 @@ jobs:
       - name: 📦 Instalar dependências
         run: npm install
 
-      - name: ✅ Rodar testes Cypress no Chrome
-        run: npx cypress run --browser chrome
+      - name: ✅ Rodar testes Cypress
+        run: npx cypress run
 
       - name: 📤 Upload de vídeos e screenshots (em caso de erro)
         if: failure()
