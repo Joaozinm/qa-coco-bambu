@@ -10,7 +10,7 @@ class ProfileNavPage {
   }
 
   accessAdressesPage() {
-    cy.contains("div", "Endereços").click();
+    cy.contains("div", "Endereços", { timeout: 10000 }).should("exist").click();
     return this;
   }
 }

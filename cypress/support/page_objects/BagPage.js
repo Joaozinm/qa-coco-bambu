@@ -13,6 +13,7 @@ class BagPage {
       .contains(productName)
       .should("be.visible")
       .click();
+    return this;
   }
 
   verifyProductInBag(productName) {
@@ -23,6 +24,7 @@ class BagPage {
     cy.get(this.selectorsList().bagItensContainer)
       .should("contain.text", productName)
       .and("be.visible");
+    return this;
   }
 }
 

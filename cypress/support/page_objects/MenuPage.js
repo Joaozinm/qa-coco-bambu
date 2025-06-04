@@ -12,6 +12,7 @@ class MenuPage {
 
   visitMenuPage() {
     cy.visit("/delivery");
+    return this;
   }
 
   validateMenuVisibility() {
@@ -29,12 +30,14 @@ class MenuPage {
         }
       })
       .should("be.visible");
+    return this;
   }
 
   validateProductsVisibility() {
     cy.get(this.selectorsList().products, { timeout: 15000 })
       .should("exist")
       .and("have.length.greaterThan", 0);
+    return this;
   }
 
   selectProduct(productName) {
@@ -46,10 +49,12 @@ class MenuPage {
       .then(($el) => {
         cy.wrap($el).click({ force: true });
       });
+    return this;
   }
 
   openBag() {
     cy.get(this.selectorsList().bagIcon).click();
+    return this;
   }
 }
 
