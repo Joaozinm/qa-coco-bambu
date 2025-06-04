@@ -130,17 +130,13 @@ Funcionalidade: Remoção de item do carrinho
 ### ✔️ Fluxos automatizados:
 
 - Login (via sessão) - `login.cy.js`
-- 
-  ![Evidência do teste](cypress/support/media/login.png)
+- ![Evidência do teste](cypress/support/media/login.png)
 - Selecionar restaurante e ver produtos - `accessMenu.cy.js`
-- 
-  ![Evidência do teste](cypress/support/media/accessMenu.png)
+- ![Evidência do teste](cypress/support/media/accessMenu.png)
 - Adicionar item ao carrinho - `addItemToCart.cy.js`
-- 
-  ![Evidência do teste](cypress/support/media/addItemToCart.png)
+- ![Evidência do teste](cypress/support/media/addItemToCart.png)
 - Cadastro de novo endereço - `adressRegister.cy.js`
-- 
-  ![Evidência do teste](cypress/support/media/adressRegister.png)
+- ![Evidência do teste](cypress/support/media/adressRegister.png)
 
 ### 🧱 Arquitetura utilizada:
 
@@ -337,4 +333,33 @@ Além disso, utilizei ferramentas modernas como Cypress, Gherkin, comandos reuti
 
 O desafio reforçou a importância de enxergar o produto não apenas do ponto de vista técnico, mas também da jornada real do usuário, focando na prevenção de falhas críticas e na entrega de valor.
 
-Essa foi uma excelente oportunidade de demonstrar habilidades práticas de QA, pensamento analítico e organização em um cenário realista.
+## Essa foi uma excelente oportunidade de demonstrar habilidades práticas de QA, pensamento analítico e organização em um cenário realista.
+
+## 🎁 BÔNUS: Integração com GitHub Actions
+
+O projeto inclui um workflow de CI que executa os testes automaticamente sempre que houver um **push ou merge para a branch `main`**.
+
+### 🔧 Arquivo do Workflow
+
+Local: `.github/workflows/cypress-tests.yml`
+
+### 🚀 O que o workflow faz
+
+1. Faz checkout do repositório
+2. Instala o Node.js (v18)
+3. Instala as dependências do projeto via `npm install`
+4. Executa todos os testes Cypress (`npx cypress run`)
+5. Se algum teste falhar, **salva os screenshots e vídeos como artefatos**
+
+### 📥 Como visualizar screenshots e vídeos de falhas
+
+1. Vá até a aba **Actions** do repositório no GitHub
+2. Clique no workflow com falha
+3. Role até a seção **Artifacts**
+4. Clique em `cypress-artifacts` para baixar um `.zip`
+5. Dentro do `.zip`, veja pastas `screenshots/` e `videos/` com as evidências de execução
+
+---
+
+Com essa integração contínua, garantimos que qualquer código que entre na `main` tenha passado por validações automatizadas, promovendo qualidade e segurança no ciclo de entrega.
+"""
