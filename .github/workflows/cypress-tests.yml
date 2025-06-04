@@ -1,7 +1,7 @@
 name: 🧪 Cypress Tests on Merge to Main
 
 on:
-  push:
+  pull_request:
     branches:
       - main
 
