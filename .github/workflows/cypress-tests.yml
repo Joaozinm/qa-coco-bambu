@@ -1,0 +1,34 @@
+name: 🧪 Cypress Tests on Merge to Main
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  run-cypress-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout código
+        uses: actions/checkout@v3
+
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: 📦 Instalar dependências
+        run: npm install
+
+      - name: ✅ Rodar testes Cypress
+        run: npx cypress run
+
+      - name: 📤 Upload de vídeos e screenshots (em caso de erro)
+        if: failure()
+        uses: actions/upload-artifact@v3
+        with:
+          name: cypress-artifacts
+          path: |
+            cypress/screenshots
+            cypress/videos
