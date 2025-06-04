@@ -18,6 +18,7 @@ class LoginPage {
 
   accessLoginPage() {
     cy.visit("/entrar");
+    cy.get(this.selectorsList().emailField).should("be.visible");
     return this;
   }
 
