@@ -1,25 +1,23 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+import userData from "../fixtures/userData.json";
+import LoginPage from "./page_objects/LoginPage";
+import MenuPage from "./page_objects/MenuPage";
+
+Cypress.Commands.add("fastLogin", () => {
+  cy.session("user_session", () => {
+    LoginPage.accessLoginPage().verifyLoginPage();
+
+    // Preenche credenciais e submete
+    LoginPage.fillEmail(userData.userSuccess.username)
+      .fillPassword(userData.userSuccess.password)
+      .submitButton();
+
+    // Valida a tela de 2FA e preenche o código
+    LoginPage.validate2FAPage()
+      .closeAlertButton()
+      .fillAuthCode("AAAAAA")
+      .submitForm();
+
+    // Verificação
+    MenuPage.validateMenuVisibility();
+  });
+});

@@ -1,0 +1,29 @@
+class BagPage {
+  selectorsList() {
+    const selectors = {
+      addToCartButton: ".button-submit-content",
+      bagItensContainer: ".item-list-component",
+      bagLoadingOverlay: ".loading-container > .ng-tns-c3498370121-4",
+    };
+    return selectors;
+  }
+
+  addToCart(productName) {
+    cy.get(this.selectorsList().addToCartButton)
+      .contains(productName)
+      .should("be.visible")
+      .click();
+  }
+
+  verifyProductInBag(productName) {
+    cy.get(this.selectorsList().bagLoadingOverlay, { timeout: 10000 }).should(
+      "not.exist"
+    );
+
+    cy.get(this.selectorsList().bagItensContainer)
+      .should("contain.text", productName)
+      .and("be.visible");
+  }
+}
+
+export default new BagPage();
