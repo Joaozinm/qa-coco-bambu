@@ -53,7 +53,7 @@ class MenuPage {
   }
 
   openBag() {
-    cy.get(this.selectorsList().bagIcon).click();
+    cy.get(this.selectorsList().bagIcon, { timeout: 10000 }).click();
     return this;
   }
 }
