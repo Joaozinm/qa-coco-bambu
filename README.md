@@ -132,11 +132,11 @@ Funcionalidade: Remoção de item do carrinho
 - Login (via sessão) - `login.cy.js`
   ![Evidência do teste](cypress/support/media/login.png)
 - Selecionar restaurante e ver produtos - `accessMenu.cy.js`
-  ![Evidência do teste](https://prnt.sc/YmHRtJrRnuDS)
+  ![Evidência do teste](cypress/support/media/accessMenu.png)
 - Adicionar item ao carrinho - `addItemToCart.cy.js`
-  ![Evidência do teste](https://prnt.sc/u9xIRiWQb_Vs)
+  ![Evidência do teste](cypress/support/media/addItemToCart.png)
 - Cadastro de novo endereço - `adressRegister.cy.js`
-  ![Evidência do teste](https://prnt.sc/lmG7EV9JoimS)
+  ![Evidência do teste](cypress/support/media/adressRegister.png)
 
 ### 🧱 Arquitetura utilizada:
 
