@@ -130,9 +130,13 @@ Funcionalidade: Remoção de item do carrinho
 ### ✔️ Fluxos automatizados:
 
 - Login (via sessão) - `login.cy.js`
+  ![Evidência do teste](https://prnt.sc/TrXou6LrVxDe)
 - Selecionar restaurante e ver produtos - `accessMenu.cy.js`
+  ![Evidência do teste](https://prnt.sc/YmHRtJrRnuDS)
 - Adicionar item ao carrinho - `addItemToCart.cy.js`
+  ![Evidência do teste](https://prnt.sc/u9xIRiWQb_Vs)
 - Cadastro de novo endereço - `adressRegister.cy.js`
+  ![Evidência do teste](https://prnt.sc/lmG7EV9JoimS)
 
 ### 🧱 Arquitetura utilizada:
 
@@ -311,6 +315,22 @@ npx cypress open
 
 ---
 
-## 🙌 Conclusão
+## 🙌 Conclusão do desafio
 
-Este conjunto de testes cobre os principais cenários para validação funcional das APIs de carrinho, com atenção a comportamentos esperados, respostas de erro e uso de técnicas de teste profissionais.
+A execução deste desafio proporcionou uma experiência prática completa, desde a análise crítica de fluxos funcionais, passando pela automação da interface web com boas práticas, até a validação robusta de APIs REST.
+
+Durante o processo, pude aplicar técnicas essenciais de QA como:
+
+Particionamento de equivalência
+
+Testes de valor-limite
+
+Validação de status e contrato de API
+
+Automação com Page Object Model e testes BDD
+
+Além disso, utilizei ferramentas modernas como Cypress, Gherkin, comandos reutilizáveis e estrutura modular para garantir clareza, reutilização e escalabilidade nos testes.
+
+O desafio reforçou a importância de enxergar o produto não apenas do ponto de vista técnico, mas também da jornada real do usuário, focando na prevenção de falhas críticas e na entrega de valor.
+
+Essa foi uma excelente oportunidade de demonstrar habilidades práticas de QA, pensamento analítico e organização em um cenário realista.
