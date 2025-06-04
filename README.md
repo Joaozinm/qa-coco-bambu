@@ -186,6 +186,8 @@ npx cypress open
 
 ---
 
+## 🚗 Etapa 3: Automação de testes de API com Cypress
+
 ## ✅ Objetivo
 
 Automatizar e validar as rotas de API relacionadas ao carrinho de compras da [API DummyJSON](https://dummyjson.com):
