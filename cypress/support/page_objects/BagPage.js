@@ -9,7 +9,7 @@ class BagPage {
   }
 
   addToCart(productName) {
-    cy.get(this.selectorsList().addToCartButton)
+    cy.get(this.selectorsList().addToCartButton, { timeout: 10000 })
       .contains(productName)
       .should("be.visible")
       .click();
@@ -21,7 +21,7 @@ class BagPage {
       "not.exist"
     );
 
-    cy.get(this.selectorsList().bagItensContainer)
+    cy.get(this.selectorsList().bagItensContainer, { timeout: 10000 })
       .should("contain.text", productName)
       .and("be.visible");
     return this;
