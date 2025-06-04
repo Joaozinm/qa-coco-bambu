@@ -73,9 +73,9 @@ Funcionalidade: Finalização de pedido
   Para que eu possa receber meu pedido
 
   Cenário: Finalizar pedido com sucesso
-    Dado que tenho itens no carrinho e um endereço válido selecionado
-    Quando eu clico em "Finalizar pedido"
-    Então devo ver a confirmação de pedido com número e estimativa de entrega
+    Given que tenho itens no carrinho e um endereço válido selecionado
+    When eu clico em "Finalizar pedido"
+    Then devo ver a confirmação de pedido com número e estimativa de entrega
 ```
 
 ---
@@ -117,10 +117,10 @@ Funcionalidade: Remoção de item do carrinho
   Para que eu possa ajustar meu pedido antes de finalizar
 
   Cenário: Remover item com sucesso
-    Dado que tenho o item "Camarão Internacional" no meu carrinho
-    Quando eu clico em "Remover"
-    Então o item deve desaparecer do carrinho
-    E o valor total deve ser atualizado corretamente
+    Given que tenho o item "Camarão Internacional" no meu carrinho
+    When eu clico em "Remover"
+    Then o item deve desaparecer do carrinho
+    And o valor total deve ser atualizado corretamente
 ```
 
 ---
