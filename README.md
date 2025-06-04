@@ -337,7 +337,7 @@ O desafio reforçou a importância de enxergar o produto não apenas do ponto de
 
 ## 🎁 BÔNUS: Integração com GitHub Actions
 
-O projeto inclui um workflow de CI que executa os testes automaticamente sempre que houver um **push ou merge para a branch `main`**.
+O projeto inclui um workflow de CI que executa os testes automaticamente sempre que houver uma **abertura de PR para a branch `main`**.
 
 ### 🔧 Arquivo do Workflow
 
