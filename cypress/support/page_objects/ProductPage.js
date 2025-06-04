@@ -12,12 +12,14 @@ class ProductPage {
       ($el) => {
         const value = parseInt($el.text().trim());
         expect(value).to.be.greaterThan(0);
+        return this;
       }
     );
     cy.get(this.selectorsList().addToCartButton, { timeout: 10000 })
       .should("exist")
       .should("be.visible")
       .click();
+    return this;
   }
 }
 
