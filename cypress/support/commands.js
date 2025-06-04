@@ -1,6 +1,9 @@
 import userData from "../fixtures/userData.json";
 import LoginPage from "./page_objects/LoginPage";
 import MenuPage from "./page_objects/MenuPage";
+import { CartRequests } from "./requests/cartRequests";
+
+// Login rápido com sessão
 
 Cypress.Commands.add("fastLogin", () => {
   cy.session("user_session", () => {
@@ -20,4 +23,17 @@ Cypress.Commands.add("fastLogin", () => {
     // Verificação
     MenuPage.validateMenuVisibility();
   });
+});
+
+// Comandos personalizados para requisições da api dummyJSON
+Cypress.Commands.add("addToCart", (payload) => {
+  return CartRequests.addToCart(payload);
+});
+
+Cypress.Commands.add("updateCart", (cartId, payload) => {
+  return CartRequests.updateCart(cartId, payload);
+});
+
+Cypress.Commands.add("deleteCart", (cartId) => {
+  return CartRequests.deleteCart(cartId);
 });
