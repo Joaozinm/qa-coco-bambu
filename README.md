@@ -351,7 +351,7 @@ Local: `.github/workflows/cypress-tests.yml`
 4. Executa todos os testes Cypress (`npx cypress run`)
 5. Se algum teste falhar, **salva os screenshots e vídeos como artefatos**
 
-- (Evidência)[]
+- (Evidência)[cypress/support/media/workflow.png]
 
 ### 📥 Como visualizar screenshots e vídeos de falhas
 
