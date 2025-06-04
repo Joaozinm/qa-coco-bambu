@@ -26,9 +26,7 @@ class AdressPage {
   }
 
   selectRegion(unit) {
-    cy.get(this.selectorsList().regionRestaurant)
-      .contains("div", unit)
-      .click({ force: true });
+    cy.contains("div", unit).click({ force: true });
   }
 
   validateAdressComplementFieldsVisibility() {

@@ -1,28 +1,23 @@
 import userData from "../fixtures/userData.json";
+import LoginPage from "./page_objects/LoginPage";
+import MenuPage from "./page_objects/MenuPage";
 
 Cypress.Commands.add("fastLogin", () => {
-  cy.session(
-    "user_session",
-    () => {
-      cy.visit("/entrar");
-      cy.get("#ion-input-2").type(userData.userSuccess.username);
-      cy.get("#ion-input-3").type(userData.userSuccess.password);
-      cy.get("button").first().click();
+  cy.session("user_session", () => {
+    LoginPage.accessLoginPage().verifyLoginPage();
 
-      // 2FA
-      for (let i = 0; i < 6; i++) {
-        cy.get(`[id^="otp_${i}_"]`).type("A");
-      }
-      cy.get("button").first().click();
+    // Preenche credenciais e submete
+    LoginPage.fillEmail(userData.userSuccess.username)
+      .fillPassword(userData.userSuccess.password)
+      .submitButton();
 
-      // Verificação
-      cy.url().should("include", "/home");
-      cy.get(".user-avatar").should("be.visible");
-    },
-    {
-      validate() {
-        cy.getCookie("session_token").should("exist");
-      },
-    }
-  );
+    // Valida a tela de 2FA e preenche o código
+    LoginPage.validate2FAPage()
+      .closeAlertButton()
+      .fillAuthCode("AAAAAA")
+      .submitForm();
+
+    // Verificação
+    MenuPage.validateMenuVisibility();
+  });
 });

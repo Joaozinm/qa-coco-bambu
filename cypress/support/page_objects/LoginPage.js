@@ -8,8 +8,10 @@ class LoginPage {
       alertCode: "desktop-modal",
       closeAlertButton: ".is-primary",
       authCodeField: (index) => `[id^="otp_${index}_"]`,
-      homePageElement: ".home-dashboard", // Adicione um seletor da página home
-      loginForm: "app-login form", // Para verificar ausência após login
+      invalidCodeAlert:
+        "cy.get('.server-error-container > .ng-tns-c566118524-1')",
+      homePageElement: ".home-dashboard",
+      loginForm: "app-login form",
     };
     return selectors;
   }
@@ -36,7 +38,7 @@ class LoginPage {
     return this;
   }
 
-  submitForm() {
+  submitButton() {
     cy.get(this.selectorsList().submitButton).first().click();
     return this;
   }
@@ -48,7 +50,7 @@ class LoginPage {
     return this;
   }
 
-  closeAlert() {
+  closeAlertButton() {
     cy.get(this.selectorsList().closeAlertButton).click();
     return this;
   }
@@ -57,6 +59,12 @@ class LoginPage {
     for (let i = 0; i < 6; i++) {
       cy.get(this.selectorsList().authCodeField(i)).type(code[i] || "A");
     }
+    return this;
+  }
+
+  submitForm() {
+    // Método mantido para compatibilidade com o fluxo
+    cy.get(this.selectorsList().submitButton).first().click();
     return this;
   }
 
@@ -72,3 +80,5 @@ class LoginPage {
     return this;
   }
 }
+
+export default new LoginPage();

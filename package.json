@@ -1,18 +1,15 @@
 {
-  "name": "desafio-tecnico-cblab",
+  "name": "challenge-cblab",
   "version": "1.0.0",
-  "description": "Main tests for a delivery platform.",
-  "main": "cypress-cucumber-preprocessor.config.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "description": "",
   "devDependencies": {
-    "@badeball/cypress-cucumber-preprocessor": "^16.0.3",
-    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
-    "cypress": "^12.0.0",
-    "esbuild": "^0.17.0"
+    "cypress": "^14.4.0"
   }
 }
